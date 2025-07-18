@@ -34,7 +34,8 @@ export async function onRequestPost(context) {
             apiEndpoint = 'sendVideo';
         } else {
             telegramFormData.append("document", uploadFile);
-            apiEndpoint = 'sendDocument';
+            // sendDocument
+            apiEndpoint = 'sendPhoto';
         }
 
         const result = await sendToTelegram(telegramFormData, apiEndpoint, env);
